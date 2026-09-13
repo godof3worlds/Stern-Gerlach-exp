@@ -161,7 +161,7 @@ MonoBehaviour:
   spin: 0
   speed: 0.5
   deflectionStrength: 0.3
-  delTime: 15
+  delTime: 30
 --- !u!114 &1282651406435849725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +187,8 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.3137255, g: 0.17339325, b: 1, a: 1}
-  m_Intensity: 1.9
-  m_Range: 1.69
+  m_Intensity: 3.87
+  m_Range: 2.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
