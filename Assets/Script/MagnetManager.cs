@@ -24,9 +24,13 @@ public class MagnetManager : MonoBehaviour
     // UI Elements - Magnets
     private Button btnAddMagnet;
     private Button btnDeleteMagnet;
+
+    private Button LTimeupd;
     private DropdownField dropdownMagnets;
     private FloatField inputPosX, inputPosY, inputPosZ;
     private FloatField inputRotX, inputRotY, inputRotZ;
+
+    private FloatField LTime;
 
     // UI Elements - Screen Position
     private FloatField screenPosX, screenPosY, screenPosZ;
@@ -36,6 +40,7 @@ public class MagnetManager : MonoBehaviour
     private FloatField inputAtomSpeed;
     private Button btnUpdateAtom;
 
+    public float liveTime = 30.0f;
     private void OnEnable()
     {
         if (uiDocument == null) uiDocument = GetComponent<UIDocument>();
@@ -45,10 +50,12 @@ public class MagnetManager : MonoBehaviour
         btnAddMagnet = root.Q<Button>("btn-add-magnet");
         btnDeleteMagnet = root.Q<Button>("btn-delete-magnet");
         dropdownMagnets = root.Q<DropdownField>("dropdown-magnets");
+        LTimeupd = root.Q<Button>("Ltime-upd");
 
         inputPosX = root.Q<FloatField>("input-pos-x");
         inputPosY = root.Q<FloatField>("input-pos-y");
         inputPosZ = root.Q<FloatField>("input-pos-z");
+        LTime = root.Q<FloatField>("LTime");
 
         inputRotX = root.Q<FloatField>("input-rot-x");
         inputRotY = root.Q<FloatField>("input-rot-y");
@@ -84,6 +91,7 @@ public class MagnetManager : MonoBehaviour
 
         // Event Bindings - Atom Config
         btnUpdateAtom.clicked += OnUpdateAtomPrefab;
+        LTimeupd.clicked += OnLtBtn;
 
         RefreshDropdown();
         UpdateScreenUIFromTransform();
@@ -94,6 +102,7 @@ public class MagnetManager : MonoBehaviour
         if (btnAddMagnet != null) btnAddMagnet.clicked -= SpawnMagnetAtPlayer;
         if (btnDeleteMagnet != null) btnDeleteMagnet.clicked -= DeleteSelectedMagnet;
         if (btnUpdateAtom != null) btnUpdateAtom.clicked -= OnUpdateAtomPrefab;
+        if (LTimeupd != null) LTimeupd.clicked -= OnLtBtn;
     }
 
     private void SpawnMagnetAtPlayer()
@@ -104,7 +113,7 @@ public class MagnetManager : MonoBehaviour
             return;
         }
 
-        GameObject newMagnet = Instantiate(magnetPrefab, playerTransform.position, playerTransform.rotation);
+        GameObject newMagnet = Instantiate(magnetPrefab, playerTransform.position, magnetPrefab.transform.rotation);
         newMagnet.name = $"Magnet_{spawnedMagnets.Count + 1}";
         spawnedMagnets.Add(newMagnet);
 
@@ -149,9 +158,9 @@ public class MagnetManager : MonoBehaviour
         Vector3 pos = selectedMagnet.transform.position;
         Vector3 rot = selectedMagnet.transform.eulerAngles;
 
-        inputPosX.value = pos.x/10f;
-        inputPosY.value = pos.y/10f;
-        inputPosZ.value = pos.z/10f;
+        inputPosX.value = pos.x;
+        inputPosY.value = pos.y;
+        inputPosZ.value = pos.z;
 
         inputRotX.value = rot.x;
         inputRotY.value = rot.y;
@@ -163,7 +172,7 @@ public class MagnetManager : MonoBehaviour
     private void OnPositionInputChanged()
     {
         if (isUpdatingUI || selectedMagnet == null) return;
-        selectedMagnet.transform.position = new Vector3(inputPosX.value, inputPosY.value, inputPosZ.value);
+        selectedMagnet.transform.position = new Vector3(inputPosX.value / 10f, inputPosY.value / 10f, inputPosZ.value / 10f);
     }
 
     private void OnRotationInputChanged()
@@ -217,5 +226,10 @@ public class MagnetManager : MonoBehaviour
         atomSpeed = inputAtomSpeed.value;
 
         Debug.Log($"Atom Config Updated: Atomic No = {atomicNumber}, Speed = {atomSpeed}");
+    }
+    private void OnLtBtn()
+    {
+        liveTime = LTime.value;
+
     }
 }

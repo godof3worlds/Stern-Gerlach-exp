@@ -70,13 +70,16 @@
             <ui:Label text="Atomic no.:" class="section-title"/>
             <ui:VisualElement class="atom-input-row">
                 <ui:Label text="Atomic Number:" class="atom-label"/>
-                <ui:IntegerField name="input-atomic-number" value="7" class="atom-input-field" style="color: rgb(0, 0, 0);"/>
+                <ui:IntegerField name="input-atomic-number" value="47" class="atom-input-field" style="color: rgb(0, 0, 0);"/>
             </ui:VisualElement>
             <ui:VisualElement class="atom-input-row">
                 <ui:Label text="Speed of Atom" class="atom-label"/>
                 <ui:FloatField name="input-atom-speed" value="1" class="atom-input-field" style="color: rgb(0, 0, 0);"/>
             </ui:VisualElement>
             <ui:Button name="btn-update-atom" text="Update Atom Prefab" class="btn btn-primary btn-update-atom"/>
+            <ui:Label text="Life time of the atom:" parse-escape-sequences="false" class="atom-label"/>
+            <ui:FloatField name="LTime" value="30" class="atom-input-field" style="color: rgb(0, 0, 0);"/>
         </ui:ScrollView>
+        <ui:Button name="Ltime-upd" text="L Time-upd" class="btn btn-primary btn-update-atom"/>
     </ui:VisualElement>
 </ui:UXML>

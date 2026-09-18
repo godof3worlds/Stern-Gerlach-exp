@@ -176,8 +176,10 @@ public class SilverIO : MonoBehaviour
             }
 
             speed = MMRefrence.atomSpeed;
-        }
-
+            delTime = MMRefrence.liveTime;
+        } }
+    private void FixedUpdate()
+    {
         if (hasHitScreen)
         {
             timeE += Time.deltaTime;
