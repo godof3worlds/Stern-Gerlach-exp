@@ -1,0 +1,137 @@
+/* Container Layout */
+.panel-container {
+    width: 320px;
+    height: 100%;
+    background-color: rgba(18, 22, 28, 0.94);
+    border-right-width: 2px;
+    border-right-color: #00ADB5;
+    padding: 16px;
+    font-size: 13px;
+    color: #EEEEEE;
+}
+
+.header-box {
+    margin-bottom: 12px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.header-title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: #00ADB5;
+}
+
+.header-subtitle {
+    font-size: 11px;
+    color: #A0A0A0;
+}
+
+.section-title {
+    font-size: 11px;
+    -unity-font-style: bold;
+    color: #222831;
+    background-color: #00ADB5;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+}
+
+/* Button Variants */
+.btn {
+    height: 34px;
+    border-radius: 4px;
+    -unity-font-style: bold;
+    border-width: 0;
+    transition-duration: 0.15s;
+}
+
+.btn-spawn {
+    margin-bottom: 8px;
+}
+
+.btn-primary {
+    background-color: #00ADB5;
+    color: #222831;
+}
+
+.btn-primary:hover {
+    background-color: #00FFF5;
+}
+
+.btn-danger {
+    background-color: #D9534F;
+    color: #FFFFFF;
+    flex-grow: 1;
+}
+
+.btn-danger:hover {
+    background-color: #C9302C;
+}
+
+/* Transform Input Rows */
+.transform-group {
+    margin-bottom: 12px;
+    background-color: #222831;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.transform-header {
+    -unity-font-style: bold;
+    font-size: 11px;
+    color: #00ADB5;
+    margin-bottom: 6px;
+}
+
+.vector3-row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.axis-field {
+    flex-direction: row;
+    align-items: center;
+    width: 31%;
+}
+
+.axis-label {
+    -unity-font-style: bold;
+    font-size: 11px;
+    margin-right: 4px;
+}
+
+.axis-x { color: #FF5555; }
+.axis-y { color: #50FA7B; }
+.axis-z { color: #8BE9FD; }
+
+.vector-input {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.vector-input .unity-text-field__input {
+    background-color: #393E46;
+    color: #FFFFFF;
+    border-radius: 3px;
+    border-width: 0;
+    padding: 2px 4px;
+    -unity-text-align: middle-left;
+}
+
+/* Custom Dropdown Styling */
+.custom-dropdown .unity-base-field__input {
+    background-color: #393E46;
+    border-radius: 4px;
+    border-width: 0;
+    color: #EEEEEE;
+    padding: 4px 8px;
+}
+
+.footer-box {
+    margin-top: 16px;
+    flex-direction: row;
+}

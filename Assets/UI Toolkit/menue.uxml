@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column-reverse; align-items: flex-start; justify-content: flex-end;">
+        <ui:Button text="+" name="Add" style="height: 114px; width: 109px; font-size: 100px; -unity-text-align: lower-center; background-color: rgb(87, 197, 151); border-top-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px;"/>
+        <ui:Label text="Magnets" name="Magnets" style="-unity-text-align: upper-left; height: 74px; width: 215px; -unity-font-style: bold; font-size: 46px; opacity: 1; visibility: visible; -unity-slice-type: tiled; background-color: rgb(255, 255, 255); -unity-background-image-tint-color: rgb(228, 0, 0);"/>
+    </ui:VisualElement>
+</ui:UXML>

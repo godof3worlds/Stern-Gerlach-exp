@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/SternGerlachHUD.uss?fileID=7433441132597879392&amp;guid=96c7d89fe96a74c4cb902d3bc04e933d&amp;type=3#SternGerlachHUD"/>
+</ui:UXML>

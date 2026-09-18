@@ -1,0 +1,82 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/SternGerlachUI.uss?fileID=7433441132597879392&amp;guid=4d688f9c6ff6db04c9abe5c4e1beb1d5&amp;type=3#SternGerlachUI"/>
+    <ui:VisualElement name="root-container" class="panel-container">
+        <ui:VisualElement class="header-box">
+            <ui:Label text="Stern-Gerlach Setup" class="header-title"/>
+            <ui:Label text="Experiment Manager" class="header-subtitle"/>
+        </ui:VisualElement>
+        <ui:ScrollView class="control-section">
+            <ui:Label text="MAGNET CREATION" class="section-title"/>
+            <ui:Button name="btn-add-magnet" text="+ Spawn Magnet at Player" class="btn btn-primary btn-spawn"/>
+            <ui:Label text="MAGNET PROPERTIES" class="section-title"/>
+            <ui:VisualElement class="control-group">
+                <ui:Label text="Select Magnet Instance" class="control-label"/>
+                <ui:DropdownField name="dropdown-magnets" class="custom-dropdown"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="transform-group">
+                <ui:Label text="Magnet Position (World)" class="control-label transform-header"/>
+                <ui:VisualElement class="vector3-row">
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="X" class="axis-label axis-x"/>
+                        <ui:FloatField name="input-pos-x" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="Y" class="axis-label axis-y"/>
+                        <ui:FloatField name="input-pos-y" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="Z" class="axis-label axis-z"/>
+                        <ui:FloatField name="input-pos-z" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="transform-group">
+                <ui:Label text="Magnet Rotation (Euler Deg)" class="control-label transform-header"/>
+                <ui:VisualElement class="vector3-row">
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="X" class="axis-label axis-x"/>
+                        <ui:FloatField name="input-rot-x" value="0" class="vector-input" style="-unity-text-outline-color: rgb(145, 145, 145); color: rgb(28, 28, 28);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="Y" class="axis-label axis-y"/>
+                        <ui:FloatField name="input-rot-y" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="Z" class="axis-label axis-z"/>
+                        <ui:FloatField name="input-rot-z" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button name="btn-delete-magnet" text="Delete Magnet" class="btn btn-danger"/>
+            <ui:Label text="DETECTOR SCREEN" class="section-title"/>
+            <ui:VisualElement class="transform-group">
+                <ui:Label text="Screen Position (World)" class="control-label transform-header"/>
+                <ui:VisualElement class="vector3-row">
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="X" class="axis-label axis-x"/>
+                        <ui:FloatField name="screen-pos-x" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="Y" class="axis-label axis-y"/>
+                        <ui:FloatField name="screen-pos-y" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="axis-field">
+                        <ui:Label text="Z" class="axis-label axis-z"/>
+                        <ui:FloatField name="screen-pos-z" value="0" class="vector-input" style="color: rgb(0, 0, 0);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label text="Atom Config:" class="main-section-header"/>
+            <ui:Label text="Atomic no.:" class="section-title"/>
+            <ui:VisualElement class="atom-input-row">
+                <ui:Label text="Atomic Number:" class="atom-label"/>
+                <ui:IntegerField name="input-atomic-number" value="7" class="atom-input-field" style="color: rgb(0, 0, 0);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="atom-input-row">
+                <ui:Label text="Speed of Atom" class="atom-label"/>
+                <ui:FloatField name="input-atom-speed" value="1" class="atom-input-field" style="color: rgb(0, 0, 0);"/>
+            </ui:VisualElement>
+            <ui:Button name="btn-update-atom" text="Update Atom Prefab" class="btn btn-primary btn-update-atom"/>
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

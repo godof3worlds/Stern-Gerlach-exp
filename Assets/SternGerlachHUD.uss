@@ -1,0 +1,216 @@
+/* Color Variables & Font Setup */
+:root {
+    --bg-color: #030712;
+    --primary-cyan: #00f0ff;
+    --secondary-violet: #a855f7;
+    --tertiary-magenta: #ec4899;
+    --text-high: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-deemphasized: #475569;
+}
+
+/* Base Layout & Cursor Hiding */
+.hud-root {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    justify-content: space-between;
+    padding: 32px 64px;
+    cursor: initial; /* Hide standard cursor inside UI Panel */
+}
+
+/* Flex Utilities */
+.flex-row { flex-direction: row; }
+.flex-center { align-items: center; justify-content: center; }
+.flex-between { justify-content: space-between; }
+.gap-sm { gap: 8px; }
+.gap-md { gap: 16px; }
+.gap-lg { gap: 32px; }
+.margin-left-xs { margin-left: 6px; }
+
+/* Custom Cursor Styling */
+.cursor-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    translate: -50% -50%;
+    picking-mode: Ignore;
+}
+
+.cursor-follower {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+    align-items: center;
+    justify-content: center;
+    translate: -50% -50%;
+    transition-property: width, height, border-color, background-color;
+    transition-duration: 0.15s;
+    picking-mode: Ignore;
+}
+
+.cursor-follower.hovering {
+    width: 64px;
+    height: 64px;
+    border-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.cursor-inner-ring {
+    width: 6px;
+    height: 6px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    opacity: 0;
+    scale: 0.5 0.5;
+    transition-property: opacity, scale;
+    transition-duration: 0.2s;
+}
+
+.cursor-follower.hovering .cursor-inner-ring {
+    opacity: 1;
+    scale: 1 1;
+}
+
+/* Typography Classes */
+.label-mono {
+    font-definition: resource('Fonts & Materials/JetBrainsMono-Regular');
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.label-body {
+    font-definition: resource('Fonts & Materials/Inter-Regular');
+    font-size: 14px;
+}
+
+.light-text { color: rgba(255, 255, 255, 0.9); }
+.muted-text { color: var(--text-muted); }
+.de-emphasized-text { color: var(--text-deemphasized); }
+
+/* Status Dot Animations */
+.status-ping {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.status-dot-white {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Header & Glass Badges */
+.header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.liquid-glass-subtle {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 6px 16px;
+}
+
+.divider-vertical {
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Display Typography */
+.main-content {
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.metadata-pill {
+    margin-bottom: 32px;
+}
+
+.title-heading {
+    font-definition: resource('Fonts & Materials/SpaceGrotesk-Bold');
+    font-size: 96px;
+    color: #ffffff;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    -unity-font-style: italic;
+}
+
+.subtitle-formula {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+}
+
+.body-description {
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 540px;
+    white-space: normal;
+    -unity-text-align: upper-center;
+    margin-bottom: 48px;
+}
+
+/* Glass Interactive Button */
+.liquid-glass-strong {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 16px 40px;
+    flex-direction: row;
+    align-items: center;
+    transition-property: scale, background-color, border-color;
+    transition-duration: 0.2s;
+}
+
+.liquid-glass-strong:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-cyan);
+    scale: 1.05 1.05;
+}
+
+.button-label {
+    color: #ffffff;
+    font-size: 16px;
+    font-definition: resource('Fonts & Materials/Inter-Regular');
+}
+
+.telemetry-bar {
+    margin-top: 32px;
+}
+
+/* Footer Section */
+.footer-text {
+    color: var(--text-deemphasized);
+}
+
+.footer-link {
+    background-color: transparent;
+    border-width: 0;
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 0;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.hidden {
+    display: none;
+}
