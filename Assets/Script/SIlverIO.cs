@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SilverIO : MonoBehaviour
 {
+    private string noUse = "This variable is not used";
     [SerializeField] private MagnetManager MMRefrence;
 
     [Header("Element Settings")]
@@ -79,6 +80,7 @@ public class SilverIO : MonoBehaviour
         }
 
         numStates = Mathf.RoundToInt(2f * totalJ + 1f);
+        Debug.Log($"Configured Atom: Atomic Number = {atomicNumber}, Total J = {totalJ}, Number of Spin States = {numStates}");
     }
 
     private void OnTriggerEnter(Collider other)
