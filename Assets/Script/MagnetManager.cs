@@ -215,7 +215,7 @@ public class MagnetManager : MonoBehaviour
     private void OnScreenPositionInputChanged()
     {
         if (isUpdatingUI || detectorScreen == null) return;
-        detectorScreen.position = new Vector3(screenPosX.value, screenPosY.value, screenPosZ.value);
+        detectorScreen.position = new Vector3(screenPosX.value/10f, screenPosY.value/10f, screenPosZ.value/10f);
     }
 
     // --- Atom Configuration ---
@@ -232,4 +232,41 @@ public class MagnetManager : MonoBehaviour
         liveTime = LTime.value;
 
     }
+
+    //----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+
+    
+    //[SerializeField] private RadioButtonGroupController graphicsRadioGroup;
+
+    //private void OnEnable()
+    //{
+    //    graphicsRadioGroup.OnRadioButtonChanged += HandleGraphicsQualityChanged;
+    //}
+
+    //private void OnDisable()
+    //{
+    //    graphicsRadioGroup.OnRadioButtonChanged -= HandleGraphicsQualityChanged;
+    //}
+
+    //private void HandleGraphicsQualityChanged(int index, UnityEngine.UI.Toggle toggle)
+    //{
+    //    if (index == -1) return;
+        
+    //    Debug.Log($"Selected Radio Option #{index}: {toggle.gameObject.name}");
+        // [Example action: Set Quality Level based on index]
+        // [QualitySettings.SetQualityLevel(index);]
+    //}
+
+
+
+
+
+
+
+    //----------------------------------------------------------------------------------------------
 }
