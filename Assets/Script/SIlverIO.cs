@@ -82,8 +82,9 @@ public class SilverIO : MonoBehaviour
         numStates = Mathf.RoundToInt(2f * totalJ + 1f);
         Debug.Log($"Configured Atom: Atomic Number = {atomicNumber}, Total J = {totalJ}, Number of Spin States = {numStates}");
     }
+    //changing on triger to somthing like in a region or in an object that i feild and taged
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (hasHitScreen) return;
 
@@ -159,10 +160,12 @@ public class SilverIO : MonoBehaviour
 
     private void ApplyDeflection(Vector3 fieldAxis)
     {
+        //changes : going to chanfe change of velocity to add force to the rigidbody instead of changing the velocity directly continues and steady
+
         Measured += 1;
         float normalizedSpinFactor = (totalJ > 0f) ? (spin / totalJ) : 0f;
-        Vector3 deflectionForce = fieldAxis * (normalizedSpinFactor * deflectionStrength * speed);
-        rb.linearVelocity += deflectionForce;
+        Vector3 deflectionForce = fieldAxis * (normalizedSpinFactor * deflectionStrength * speed * speed);
+        rb.AddForce(deflectionForce, ForceMode.Acceleration);
     }
 
     private void Update()

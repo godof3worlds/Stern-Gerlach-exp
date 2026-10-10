@@ -11,13 +11,13 @@ public class AtomSpawner : MonoBehaviour
 
     [Header("Spawn Offset Settings")]
     [Tooltip("Local offset from furnace origin to aperture hole")]
-    [SerializeField] private Vector3 spawnOffset = new Vector3(0.002f, 0.903f, 0.787f);
+    [SerializeField] private Vector3 spawnOffset = new Vector3(0.00001f, 0.00001f, 0.00001f);
 
     [Tooltip("Additional rotation offset added to furnace rotation (X=90)")]
     [SerializeField] private Vector3 rotationOffset = new Vector3(-90f, 0f, 180f);
 
     [Header("Spawner Timing")]
-    [SerializeField] private float spawnInterval = 0.5f;
+    [SerializeField] private float spawnInterval = 0.2f;
     [SerializeField] private bool autoSpawn = true;
 
     private float timer;
