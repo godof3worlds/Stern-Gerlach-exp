@@ -1,5 +1,7 @@
 # ⚛️ Stern–Gerlach Experiment Simulator
-
+___
+**simulation link** : https://play.unity.com/en/games/022d70af-072a-4554-a4e4-8c1078db65b4/stern-gerlach-experiment-simulator
+---
 A **3D interactive Stern–Gerlach experiment simulator** built with **Unity 6** and **C#**.
 
 The project visualizes quantum spin measurement by allowing users to configure atoms, place and rotate Stern–Gerlach magnets, observe particle deflection, and analyze the resulting detection patterns.
